@@ -26,7 +26,7 @@ const userSchema=new mongoose.Schema({
        },
   location:{
         type:String,
-        default:'mumbai'
+        required:true,
        },     
          
 },{timestamps:true})
