@@ -3,7 +3,7 @@ import userModel from "../models/userModel.js";
 //register
 export const registerController=async(req,res,next)=>{
    
-  const {name,email,password}=req.body;
+  const {name,email,password,location}=req.body;
 
   //  if(!name||!email||!password){
   //   next("please provide all fields")
@@ -15,7 +15,7 @@ export const registerController=async(req,res,next)=>{
   //  }
   
 
-   const user=await userModel.create({name,email,password})
+   const user=await userModel.create({name,email,password,location})
    
 
 
@@ -27,7 +27,7 @@ export const registerController=async(req,res,next)=>{
     message:'user created successfully',
     user:{
       name:user.name,
-      lastname:user.lastnName,
+      lastname:user.lastName,
       email:user.email,
       location:user.location
     },
