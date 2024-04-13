@@ -26,7 +26,7 @@ const userSchema=new mongoose.Schema({
        },
   location:{
         type:String,
-        
+       required:[true,'location is required'],
        },     
          
 },{timestamps:true})
