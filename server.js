@@ -60,6 +60,9 @@ app.use(cors());
 app.use(morgan('dev'))
 
 //routes
+app.use('/',(req,res)=>{
+  res.send("hello")
+})
 app.use('/api/v1/test',testRoute)
 app.use('/api/v1/auth',authRoutes)
 app.use('/api/v1/user',userRoutes)
