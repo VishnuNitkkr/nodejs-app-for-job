@@ -56,7 +56,11 @@ app.use(helmet());
 app.use(mongoSanitize());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cors());
+app.use(cors({
+  origin:"https://reactjs-app-for-job.vercel.app",
+   methods:['POST','GET','DELETE','PUT'],
+   credentials:true,
+}));
 app.use(morgan('dev'))
 
 //routes
